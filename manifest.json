@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "QAutoDL",
+    "description": "Oculus APK auto-downloader based off DownQ",
+    "version": "1.0.0",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      },
+    "permissions": [
+        "cookies",
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "*://*.oculus.com/*"
+    ],
+    "declarative_net_request": {
+        "rule_resources" : [{
+          "id": "ruleset",
+          "enabled": true,
+          "path": "rules.json"
+        }]
+    },
+    "background": {
+        "service_worker": "Cookies.js"
+    },
+    "content_scripts": [{
+        "run_at": "document_end",
+        "js": ["lib/unzip.min.js", "lib/inflate.min.js", "QAutoDL.js"],
+        "matches": ["*://*.oculus.com/experiences/quest/*", "*://*.oculus.com/experiences/rift/*", "*://*.oculus.com/experiences/go/*", "*://*.oculus.com/experiences/gear-vr/*"]
+    }]
+  }
