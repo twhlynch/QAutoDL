@@ -32,6 +32,12 @@ function main() {
         if (pathname.length == 3) {
             await waitForElement('.app__info');
 
+            const button = document.querySelector("button[data-testid='pdp:purchase-button']");
+            if (button) {
+                button.click();
+                await waitForElement('button[data-testid^="store:pdp:app-button:manage-entitlement:"]');
+            }
+
             const requestData = `access_token=${access_token}&variables={"applicationID":"${applicationID}"}&doc_id=3828663700542720`;
             createAndSendRequest(requestData).then((response) => {
                 const releaseChannel = response.data.node.release_channels.nodes[0];
