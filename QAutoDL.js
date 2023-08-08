@@ -33,7 +33,7 @@ function main() {
             await waitForElement('.app__info');
 
             const button = document.querySelector("button[data-testid='pdp:purchase-button']");
-            if (button) {
+            if (button && !button.textContent.includes(".")) {
                 button.click();
 
                 const confirm = (async () => {
