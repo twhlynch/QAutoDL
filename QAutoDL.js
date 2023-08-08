@@ -35,6 +35,16 @@ function main() {
             const button = document.querySelector("button[data-testid='pdp:purchase-button']");
             if (button) {
                 button.click();
+
+                const confirm = (async () => {
+                    selector = 'button[data-testid="confirmation-modal:confirm"]'
+                    await waitForElement(selector);
+                    const confirm = document.querySelector(selector);
+                    if (confirm) {
+                        confirm.click();
+                    }
+                })();
+                
                 await waitForElement('button[data-testid^="store:pdp:app-button:manage-entitlement:"]');
             }
 
