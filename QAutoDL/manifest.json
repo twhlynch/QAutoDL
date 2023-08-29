@@ -27,7 +27,7 @@
     },
     "content_scripts": [{
         "run_at": "document_end",
-        "js": ["lib/unzip.min.js", "lib/inflate.min.js", "QAutoDL.js"],
+        "js": ["QAutoDL.js"],
         "matches": ["*://*.oculus.com/experiences/quest/*", "*://*.oculus.com/experiences/rift/*", "*://*.oculus.com/experiences/go/*", "*://*.oculus.com/experiences/gear-vr/*"]
     }]
   }

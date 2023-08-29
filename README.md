@@ -11,6 +11,15 @@ Built off DownQuest but instead of allowing you do get old versions of apps, it 
 - Go to the app you want to downgrade/download
 - Wait for the download to finish and use ADB to sideload the APK
 
->Contains code from https://github.com/basti564/DownQuest
+### Scripts
+Located in `/Scripts` are some useful scripts to use with this extention.
 
->Contains MIT licensed zlib.js © 2012 imaya
+**search.py**
+
+Easily run multiple searches for apps through oculusDB and automatically open the results.
+
+`search.py [-h] app_list`
+
+app_list is a comma separated list of app names, or oculus experience urls.
+
+>Contains code from https://github.com/basti564/DownQuest
